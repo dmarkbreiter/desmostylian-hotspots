@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://use.typekit.net/ucf7rsk.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type='text/css' media='all' href="bootstrap.css">
+    <style></style>
+    <style>
+        html {
+            font-family: ff-real-headline-pro, sans-serif;
+            padding-left:4vw;
+            padding-right:4vw;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .flex-container {
+            display:inline-flex;
+            justify-content: center;
+            align-items: center;
+            height:100%;
+        }
+
+        .container {
+            display:inline-flex;
+            position:relative;
+            justify-content:center;
+            align-items:center;
+            width:auto;
+            height:auto;
+            max-height: 505px;
+            max-width:1085px;
+        }
+
+        .background {
+            max-height:100vh;
+            max-width:100%;
+            height:auto;
+            width:auto;
+            z-index:0;
+        }
+
+        .selected {
+            position:absolute;
+            max-height:100%;
+            max-width:100%;
+            z-index: 1;
+            opacity:0;
+            transition: opacity .25s ease-in-out;
+            -moz-transition: opacity .25s ease-in-out;
+            -webkit-transition: opacity .25s ease-in-out;
+        }
+
+        .hotspot {
+            background-color:rgba(8, 127, 155, 0.8);
+            height:2.75vw;
+            width:2.75vw;
+            min-height:10px;
+            min-width:10px;
+            border-radius:50%;
+            position:absolute;
+            z-index:10;
+            transition: transform .25s ease-in-out;
+            -moz-transition: transform .25s ease-in-out;
+            -webkit-transition: transform .25s ease-in-out;
+        }
+
+        #leg-hotspot{
+            top:60%;
+            left:30%;
+        }
+
+        #tusk-hotspot{
+            top:39%;
+            left:8.5%;
+        }
+
+        #body-hotspot {
+            top:30%;
+            left:77%;
+        }
+
+        .hotspot:hover {
+            transform:scale(1.2);
+        }
+  
+        .hotspot:hover + .selected {
+            opacity:0.8;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="flex-container">
+        <div class="container">
+          
+            <div class="hotspot" id="leg-hotspot" title="Legs for swimming?" role="tooltip" data-toggle="popover" data-animation="true" 
+            data-content="It might not look like it, but these legs are well adapted for a mainly aquatic lifestyle."></div>
+            <img class="selected" src="leg-selected.png">
+            
+            <div class="hotspot" id="tusk-hotspot" title="Tusks!" role="tooltip" data-toggle="popover" data-animation="true" 
+            data-content="Desmostylians used their tusks to rip up sea grass and sucked them up like a vacuum!"></div>
+            <img class="selected" src="tusk-selected.png">
+
+            <div class="hotspot" id="body-hotspot" title="Unusual body plan" role="tooltip" data-toggle="popover" data-animation="true" 
+            data-content="Desmostylians possibly walked on the shallow sea floor like a hippo or actively swam"></div>
+            <img class="selected" src="body-selected.png">
+
+            <img class="background" src="desmostylian-illustration.png">
+        
+         </div>
+    </div>
+    
+    <!-- jQuery dependencies-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <!-- Popover.js-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="bootstrap.min.js"></script>
+          
+    <script>
+    // Bootstrap Popover
+    $('[data-toggle="popover"]').popover({
+      container:'body', 
+      trigger:'hover',
+      animation: true,
+      placement: "right auto"
+        }
+      );
+    </script>
+  </body>
+</html>
